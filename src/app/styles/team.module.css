@@ -1,0 +1,33 @@
+.teamSection {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+}
+
+.teamGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.teamMember {
+    text-align: center;
+}
+
+.teamMember img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.teamMember h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.teamMember p {
+    font-size: 1.2rem;
+    color: #666;
+}

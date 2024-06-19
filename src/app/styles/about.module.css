@@ -1,0 +1,22 @@
+.aboutPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.contentSection {
+    max-width: 800px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.contentSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contentSection p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}

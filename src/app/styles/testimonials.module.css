@@ -1,0 +1,36 @@
+.testimonialsSection {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    background-color: #f1f1f1;
+}
+
+.testimonialsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.testimonial {
+    max-width: 300px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.testimonial h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.testimonial p:last-child {
+    font-size: 1rem;
+    color: #666;
+}

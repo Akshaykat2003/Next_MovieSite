@@ -1,22 +1,22 @@
-.main_header{
+/* Main header styling */
+.main_header {
     padding: 0 9rem;
     height: 10rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: none;
-    outline: none;
-    /*background-color: yellow;*/
-    /*background: linear-gradient(-45deg, #a8e48a, #1eb6d9, #f2d3f7);*/
     background-size: 400% 400%;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+                rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+                rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
-
+/* Navbar brand styling */
 .navbar_brand {
     text-align: left;
 }
 
+/* Navbar list styling */
 .navbarList {
     display: flex;
     justify-content: space-around;
@@ -24,12 +24,14 @@
     gap: 3.2rem;
 }
 
+/* Navbar item styling */
 .navbarItem {
     height: 100%;
     display: grid;
     place-items: center;
 }
 
+/* Navbar link styling */
 .navbarList a {
     font-weight: bold;
     font-size: 1.8rem;
@@ -38,12 +40,10 @@
     margin: 0;
     position: relative;
     overflow: hidden;
+    transition: color 0.3s ease;
 }
 
-/*.navbarList .navbarItem a:hover {*/
-/*    color: #e50914;*/
-/*}*/
-
+/* Navbar link hover effect */
 .navbarItem a:before {
     content: "";
     position: absolute;
@@ -53,33 +53,20 @@
     height: .5rem;
     background-color: #e50914;
     left: -100%;
+    transition: left 0.4s linear, height 0.4s linear;
 }
 
 .navbarItem a:hover:before {
-    animation: coolNavLine .4s linear forwards;
+    left: 0;
+    height: 100%;
+    z-index: -1;
 }
 
-@keyframes coolNavLine {
-    0% {
-        left: -100%;
-        height: .5rem;
-    }
-    50% {
-        left: 0;
-        height: .5rem;
-    }
-    100% {
-        left: 0;
-        height: 100%;
-        z-index: -1;
-    }
-}
-
-.navbarList .navbarItem a:hover{
+.navbarList .navbarItem a:hover {
     color: #fff;
 }
 
-
+/* Mobile navbar button */
 .mobile-navbar-btn {
     display: none;
 }
@@ -92,21 +79,15 @@
     display: none;
 }
 
-.mobile-navbar-btn[name="close-outline"] {
-    display: none;
-}
-
-
+/* Responsive design for smaller screens */
 @media screen and (max-width: 999px) {
-
     .main_header {
         padding: 0 5rem;
     }
 
     .mobile-navbar-btn {
         display: inline-block;
-        z-index: 999;
-        /*border: .1rem solid #161617;*/
+        z-index: 1000;
     }
 
     .mobile-nav-icon {
@@ -114,15 +95,15 @@
         color: #161617;
     }
 
-    .mobile-nav-icon:hover, .close-outline:hover{
+    .mobile-nav-icon:hover, .close-outline:hover {
         color: #e50914;
     }
 
-    /* hide the original nav menu  */
+    /* Hide the original nav menu */
     .navbarList {
         width: 100vw;
         height: 100vh;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         background-color: #fff;
@@ -134,21 +115,28 @@
         transform: translateX(100%);
         visibility: hidden;
         opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 999;
     }
 
     .navbarList .navbarItem {
         font-size: 4.2rem;
     }
 
-    .navbarList .navbarItem a{
+    .navbarList .navbarItem a {
         font-size: 3.2rem;
     }
 
-    .navbarList .navbarItem a:hover {
-        color: #e50914;
+    .navbarList .navbarItem a:before {
+        height: 100%;
+        z-index: -1;
     }
 
-    /*when user click on the open menu icon*/
+    .navbarList .navbarItem a:hover {
+        color: #f2f0f0;
+    }
+
+    /* When user clicks on the open menu icon */
     .active .mobile-nav-icon {
         display: none;
         font-size: 4.2rem;
@@ -156,7 +144,7 @@
         top: 3%;
         right: 10%;
         color: #161617;
-        z-index: 9999;
+        z-index: 1000;
     }
 
     .active .close-outline {
@@ -167,6 +155,5 @@
         visibility: visible;
         opacity: 1;
         transform: translateX(0);
-        z-index: 999;
     }
 }
