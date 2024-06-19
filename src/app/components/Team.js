@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from "@/app/styles/team.module.css";
 
 const Team = () => {
@@ -15,7 +16,13 @@ const Team = () => {
             <div className={styles.teamGrid}>
                 {teamMembers.map((member, index) => (
                     <div key={index} className={styles.teamMember}>
-                        <img src={member.imageUrl} alt={`${member.name}'s picture`} />
+                        <Image 
+                            src={member.imageUrl} 
+                            alt={`${member.name}'s picture`} 
+                            width={150} // specify the width of the image
+                            height={150} // specify the height of the image
+                            className={styles.teamImage} // optional: add a class for styling
+                        />
                         <h3>{member.name}</h3>
                         <p>{member.role}</p>
                     </div>

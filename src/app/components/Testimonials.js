@@ -26,7 +26,7 @@ const Testimonials = () => {
             <div className={styles.testimonialsGrid}>
                 {testimonials.map((testimonial, index) => (
                     <div key={index} className={styles.testimonial}>
-                        <p>"{testimonial.quote}"</p>
+                        <p>&quot;{testimonial.quote}&quot;</p>
                         <h3>{testimonial.name}</h3>
                         <p>{testimonial.position}</p>
                     </div>
